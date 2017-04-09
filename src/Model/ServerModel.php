@@ -18,33 +18,17 @@ class ServerModel extends ServerEntity
     }
 
     /**
-     * Add resources from given machine.
-     *
-     * @param VmachineModel $vm
-     *
-     * @return $this
-     */
-    public function addResources(VmachineModel $vm)
-    {
-        $this->getCpu()->add($vm->getCpu()->getAmount());
-        $this->getRam()->add($vm->getRam()->getAmount());
-        $this->getHdd()->add($vm->getHdd()->getAmount());
-
-        return $this;
-    }
-
-    /**
      * Subtract resources from given machine.
      *
-     * @param VmachineModel $vm
+     * @param VmachineModel $vmachine
      *
      * @return $this
      */
-    public function subtractResources(VmachineModel $vm)
+    public function subtractResources(VmachineModel $vmachine)
     {
-        $this->getCpu()->subtract($vm->getCpu()->getAmount());
-        $this->getRam()->subtract($vm->getRam()->getAmount());
-        $this->getHdd()->subtract($vm->getHdd()->getAmount());
+        $this->getCpu()->subtract($vmachine->getCpu()->getAmount());
+        $this->getRam()->subtract($vmachine->getRam()->getAmount());
+        $this->getHdd()->subtract($vmachine->getHdd()->getAmount());
 
         return $this;
     }
@@ -52,17 +36,22 @@ class ServerModel extends ServerEntity
     /**
      * if resources are greater than given.
      *
-     * @param ServerModel $vm
+     * @param ServerModel $vmachine
      *
      * @return boolean
      */
-    public function greaterThan(ServerModel $vm)
+    public function greaterThan(ServerModel $vmachine)
     {
-        return $this->getCpu()->getAmount() > $vm->getCpu()->getAmount()
-            || $this->getRam()->getAmount() > $vm->getRam()->getAmount()
-            || $this->getHdd()->getAmount() > $vm->getHdd()->getAmount();
+        return $this->getCpu()->getAmount() > $vmachine->getCpu()->getAmount()
+            || $this->getRam()->getAmount() > $vmachine->getRam()->getAmount()
+            || $this->getHdd()->getAmount() > $vmachine->getHdd()->getAmount();
     }
 
+    /**
+     * String output of VM.
+     *
+     * @return string
+     */
     public function toString()
     {
         return "VM("
@@ -71,19 +60,18 @@ class ServerModel extends ServerEntity
             . $this->getHdd()->toString() . ')';
     }
 
-    public function addVm(VMachineModel $vm)
+    /**
+     * Add VM to the server.
+     *
+     * @param VMachineModel $vmachine
+     *
+     * @return $this
+     */
+    public function addVm(VMachineModel $vmachine)
     {
-        $this->vmArray[] = $vm;
-        $this->subtractResources($vm);
+        $this->vmArray[] = $vmachine;
+        $this->subtractResources($vmachine);
 
         return $this;
     }
-
-    //public static function create(VMachineModel $max)
-    //{
-    //    $server = new VMachineModel(0, 0, 0);
-    //    $server->addResources($max);
-    //
-    //    return $server;
-    //}
 }

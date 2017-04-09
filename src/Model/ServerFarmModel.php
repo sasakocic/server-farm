@@ -33,21 +33,21 @@ class ServerFarmModel
     /**
      * Add Virtual machine to the farm.
      *
-     * @param VmachineModel $vm
+     * @param VmachineModel $vmachine
      */
-    public function addVm(VmachineModel $vm)
+    public function addVm(VmachineModel $vmachine)
     {
-        if ($vm->greaterThan($this->max)) {
+        if ($vmachine->greaterThan($this->max)) {
             return;
         }
         foreach ($this->getServers() as $server) {
-            if (!$vm->greaterThan($server)) {
-                $server->addVm($vm);
+            if (!$vmachine->greaterThan($server)) {
+                $server->addVm($vmachine);
 
                 return;
             }
         }
-        $this->servers[] = ServerModel::createAsVm($this->max)->addVm($vm);
+        $this->servers[] = ServerModel::createAsVm($this->max)->addVm($vmachine);
     }
 
     /**
@@ -59,8 +59,8 @@ class ServerFarmModel
      */
     public function serversNeededForVmachineArray(array $vmArray)
     {
-        foreach ($vmArray as $vm) {
-            $this->addVm($vm);
+        foreach ($vmArray as $vmachine) {
+            $this->addVm($vmachine);
         }
 
         return $this->getServers();
@@ -75,8 +75,8 @@ class ServerFarmModel
      */
     public function storeVmachines(array $vmArray)
     {
-        foreach ($vmArray as $vm) {
-            $this->addVm($vm);
+        foreach ($vmArray as $vmachine) {
+            $this->addVm($vmachine);
         }
 
         return $this;
@@ -91,8 +91,8 @@ class ServerFarmModel
         $output = 'Server list' . PHP_EOL;
         foreach ($this->servers as $server) {
             $output .= $n++ . '. ';
-            foreach ($server->getVmArray() as $vm) {
-                $output .= $vm->toString() . ' ';
+            foreach ($server->getVmArray() as $vmachine) {
+                $output .= $vmachine->toString() . ' ';
             }
             $output .= 'remains ' . $server->toString();
             $output .= PHP_EOL;

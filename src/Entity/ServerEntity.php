@@ -2,8 +2,6 @@
 
 namespace App\Entity;
 
-use App\Model\VMachineModel;
-
 class ServerEntity
 {
     /** @var Cpu */
@@ -68,7 +66,7 @@ class ServerEntity
     /**
      * VMachine create.
      *
-     * @param ServerEntity $vm
+     * @param ServerEntity $vmachine
      *
      * @return static
      * @internal param int $cpu
@@ -76,12 +74,12 @@ class ServerEntity
      * @internal param int $hdd
      *
      */
-    public static function createAsVm(self $vm)
+    public static function createAsVm(self $vmachine)
     {
         return new static(
-            $vm->getCpu()->getAmount(),
-            $vm->getRam()->getAmount(),
-            $vm->getHdd()->getAmount()
+            $vmachine->getCpu()->getAmount(),
+            $vmachine->getRam()->getAmount(),
+            $vmachine->getHdd()->getAmount()
         );
     }
 }
