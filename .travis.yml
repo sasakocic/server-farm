@@ -15,7 +15,7 @@ before_install:
 install:
   - travis_retry composer require --dev --no-update squizlabs/php_codesniffer
   - travis_retry composer require codeclimate/php-test-reporter --dev
-  - travis_retry composer require sensiolabs/security-checker:dev-master --dev
+  - # travis_retry composer require sensiolabs/security-checker:dev-master --dev
   - travis_retry composer install --prefer-dist --no-interaction
 
 notifications:
@@ -26,7 +26,7 @@ script:
   - vendor/bin/phpunit --coverage-text --coverage-clover=build/logs/clover.xml
   - ln -s build/logs/clover.xml coverage.xml
   - vendor/bin/test-reporter
-  - vendor/bin/security-checker security:check composer.lock
+  - # vendor/bin/security-checker security:check composer.lock
   - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
 
 
