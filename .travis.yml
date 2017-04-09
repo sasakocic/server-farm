@@ -24,6 +24,6 @@ script:
   - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.xml
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -t CODECOV_TOKEN
+  - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
 
 
