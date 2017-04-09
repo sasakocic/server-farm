@@ -3,7 +3,6 @@
 Simulation of allocation of servers and virtual machines in a server farm
 
 [![Build Status](https://img.shields.io/travis/facebook/php-graph-sdk/5.4.svg)](https://travis-ci.org/sasakocic/server-farm)
-[![Latest Stable Version](http://img.shields.io/badge/Latest%20Stable-5.4.4-blue.svg)](https://packagist.org/packages/sasakocic/server-farm)
 [![Code Style Status](https://styleci.io/repos/83059149/shield)](https://styleci.io/repos/87685511)
 
 
