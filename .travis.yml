@@ -22,8 +22,13 @@ notifications:
 script:
   - vendor/bin/phpcs --colors -p --standard=PSR2 --encoding=utf-8 -n src/
   - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.xml
+  - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN $CODECOV_TOKEN2
+  - echo $CODECOV_TOKEN
+  - echo $CODECOV_TOKEN2
 
 after_success:
   - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN $CODECOV_TOKEN2
+  - echo $CODECOV_TOKEN
+  - echo $CODECOV_TOKEN2
 
 
