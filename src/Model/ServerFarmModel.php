@@ -87,10 +87,10 @@ class ServerFarmModel
      */
     public function toString()
     {
-        $n = 1;
+        $counter = 1;
         $output = 'Server list' . PHP_EOL;
         foreach ($this->servers as $server) {
-            $output .= $n++ . '. ';
+            $output .= $counter++ . '. ';
             foreach ($server->getVmArray() as $vmachine) {
                 $output .= $vmachine->toString() . ' ';
             }
