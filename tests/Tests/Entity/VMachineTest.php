@@ -13,8 +13,6 @@ class VmachineTest extends TestCase
         $ram = 2;
         $hdd = 3;
         $vm = new VMachineEntity($cpu, $ram, $hdd);
-        $add = new VMachineEntity($cpu, $ram, $hdd);
-        $vm->add($add)->subtract($add);
 
         $this->assertSame($cpu, $vm->getCpu()->getAmount());
         $this->assertSame($ram, $vm->getRam()->getAmount());

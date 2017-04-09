@@ -9,13 +9,11 @@ class ResourceTest extends TestCase
 {
     public function test()
     {
-        $amount = 1;
+        $amount = 3;
         $resource = new Resource($amount);
         $this->assertSame($amount, $resource->getAmount());
-        $add = 2;
-        $resource->add($add);
-        $this->assertSame($amount + $add, $resource->getAmount());
-        $resource->subtract($add);
-        $this->assertSame($amount, $resource->getAmount());
+        $subtract = 2;
+        $resource->subtract($subtract);
+        $this->assertSame($amount - $subtract, $resource->getAmount());
     }
 }
