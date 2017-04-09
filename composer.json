@@ -1,6 +1,6 @@
 {
-  "name": "skocic/servers",
-  "description": "description_text",
+  "name": "skocic/server-farm",
+  "description": "Simulation of allocation of servers and virtual machines in a server farm",
   "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
