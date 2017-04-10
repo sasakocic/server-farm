@@ -74,7 +74,7 @@ class ServerEntity
      * @internal param int $hdd
      *
      */
-    public static function createAsVm(self $vmachine)
+    public static function createAsVm($vmachine)
     {
         return new static(
             $vmachine->getCpu()->getAmount(),

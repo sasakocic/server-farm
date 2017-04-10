@@ -9,7 +9,7 @@ class ServerFarmModel
 {
     /** @var ServerModel[] */
     protected $servers = [];
-    /** @var VMachineModel */
+    /** @var ServerModel */
     protected $max;
 
     /**
