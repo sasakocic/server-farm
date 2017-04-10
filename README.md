@@ -6,6 +6,7 @@ Simulation of allocation of servers and virtual machines in a server farm
 [![Code Style Status](https://styleci.io/repos/83059149/shield)](https://styleci.io/repos/87685511)
 [![CodeCov](https://img.shields.io/codecov/c/github/sasakocic/server-farm.svg)](https://codecov.io/gh/sasakocic/server-farm)
 [![CodeClimate](https://img.shields.io/codeclimate/github/sasakocic/server-farm.svg)](https://codeclimate.com/github/sasakocic/server-farm)
+[![Issue Count](https://codeclimate.com/github/sasakocic/server-farm/badges/issue_count.svg)](https://codeclimate.com/github/sasakocic/server-farm)
 
 ## Installation
 
