@@ -37,11 +37,11 @@ class ServerFarmModel
      */
     public function addVm(VmachineModel $vmachine)
     {
-        if ($vmachine->greaterThan($this->max)) {
+        if ($vmachine->isGreaterThan($this->max)) {
             return;
         }
         foreach ($this->getServers() as $server) {
-            if (!$vmachine->greaterThan($server)) {
+            if (!$vmachine->isGreaterThan($server)) {
                 $server->addVm($vmachine);
 
                 return;
