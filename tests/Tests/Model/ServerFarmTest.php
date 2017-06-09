@@ -4,8 +4,8 @@ namespace Tests;
 
 use App\Model\ServerFarmModel;
 use App\Model\ServerModel;
-use PHPUnit\Framework\TestCase;
 use App\Model\VmachineModel;
+use PHPUnit\Framework\TestCase;
 
 class ServerFarmTest extends TestCase
 {
@@ -22,16 +22,16 @@ class ServerFarmTest extends TestCase
         $sf->storeVmachines($vmArray);
         $actual = $sf->toString();
         $expected = "Server list\n"
-            . "1. VM(1 MHz, 1 GB, 2 GB) VM(2 MHz, 2 GB, 1 GB) remains VM(1 MHz, 3 GB, 4 GB)\n"
-            . "2. VM(3 MHz, 4 GB, 3 GB) remains VM(1 MHz, 2 GB, 4 GB)\n"
-            . "3. VM(2 MHz, 1 GB, 2 GB) remains VM(2 MHz, 5 GB, 5 GB)\n";
+            ."1. VM(1 MHz, 1 GB, 2 GB) VM(2 MHz, 2 GB, 1 GB) remains VM(1 MHz, 3 GB, 4 GB)\n"
+            ."2. VM(3 MHz, 4 GB, 3 GB) remains VM(1 MHz, 2 GB, 4 GB)\n"
+            ."3. VM(2 MHz, 1 GB, 2 GB) remains VM(2 MHz, 5 GB, 5 GB)\n";
         $this->assertSame($expected, $actual);
         $n = $sf->count();
         $this->assertSame(3, $n);
     }
 
     /**
-     * Depending on order we can fit more VMs in less servers
+     * Depending on order we can fit more VMs in less servers.
      */
     public function testGetNumberDifferentOrder()
     {
@@ -46,8 +46,8 @@ class ServerFarmTest extends TestCase
         $sf->storeVmachines($vmArray);
         $actual = $sf->toString();
         $expected = "Server list\n"
-            . "1. VM(1 MHz, 0 GB, 0 GB) VM(3 MHz, 0 GB, 0 GB) remains VM(0 MHz, 6 GB, 7 GB)\n"
-            . "2. VM(2 MHz, 0 GB, 0 GB) VM(2 MHz, 0 GB, 0 GB) remains VM(0 MHz, 6 GB, 7 GB)\n";
+            ."1. VM(1 MHz, 0 GB, 0 GB) VM(3 MHz, 0 GB, 0 GB) remains VM(0 MHz, 6 GB, 7 GB)\n"
+            ."2. VM(2 MHz, 0 GB, 0 GB) VM(2 MHz, 0 GB, 0 GB) remains VM(0 MHz, 6 GB, 7 GB)\n";
         $this->assertSame($expected, $actual);
         $n = $sf->count();
         $this->assertSame(2, $n);

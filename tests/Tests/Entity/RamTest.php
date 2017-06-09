@@ -2,8 +2,8 @@
 
 namespace Tests;
 
-use PHPUnit\Framework\TestCase;
 use App\Entity\Ram;
+use PHPUnit\Framework\TestCase;
 
 class RamTest extends TestCase
 {

@@ -83,18 +83,18 @@ class ServerFarmModel
     }
 
     /**
-     * Output allocation
+     * Output allocation.
      */
     public function toString()
     {
         $counter = 1;
-        $output = 'Server list' . PHP_EOL;
+        $output = 'Server list'.PHP_EOL;
         foreach ($this->servers as $server) {
-            $output .= $counter++ . '. ';
+            $output .= $counter++.'. ';
             foreach ($server->getVmArray() as $vmachine) {
-                $output .= $vmachine->toString() . ' ';
+                $output .= $vmachine->toString().' ';
             }
-            $output .= 'remains ' . $server->toString();
+            $output .= 'remains '.$server->toString();
             $output .= PHP_EOL;
         }
 
