@@ -69,10 +69,10 @@ class ServerEntity
      * @param ServerEntity $vmachine
      *
      * @return static
+     *
      * @internal param int $cpu
      * @internal param int $ram
      * @internal param int $hdd
-     *
      */
     public static function createAsVm($vmachine)
     {

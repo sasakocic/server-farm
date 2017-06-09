@@ -38,7 +38,7 @@ class ServerModel extends ServerEntity
      *
      * @param ServerModel $vmachine
      *
-     * @return boolean
+     * @return bool
      */
     public function isGreaterThan(ServerModel $vmachine)
     {

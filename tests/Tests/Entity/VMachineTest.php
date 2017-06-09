@@ -2,10 +2,10 @@
 
 namespace Tests;
 
-use PHPUnit\Framework\TestCase;
 use App\Entity\VMachineEntity;
+use PHPUnit\Framework\TestCase;
 
-class VmachineTest extends TestCase
+class VMachineTest extends TestCase
 {
     public function test()
     {
