@@ -2,8 +2,8 @@
 
 namespace Tests;
 
-use PHPUnit\Framework\TestCase;
 use App\Entity\Cpu;
+use PHPUnit\Framework\TestCase;
 
 class CpuTest extends TestCase
 {

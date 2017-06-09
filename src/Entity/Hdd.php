@@ -6,6 +6,6 @@ class Hdd extends Resource
 {
     public function toString()
     {
-        return parent::toString() . ' GB';
+        return parent::toString().' GB';
     }
 }

@@ -38,7 +38,7 @@ class ServerModel extends ServerEntity
      *
      * @param ServerModel $vmachine
      *
-     * @return boolean
+     * @return bool
      */
     public function isGreaterThan(ServerModel $vmachine)
     {
@@ -55,9 +55,9 @@ class ServerModel extends ServerEntity
     public function toString()
     {
         return 'VM('
-            . $this->getCpu()->toString() . ', '
-            . $this->getRam()->toString() . ', '
-            . $this->getHdd()->toString() . ')';
+            .$this->getCpu()->toString().', '
+            .$this->getRam()->toString().', '
+            .$this->getHdd()->toString().')';
     }
 
     /**

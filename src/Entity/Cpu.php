@@ -6,6 +6,6 @@ class Cpu extends Resource
 {
     public function toString()
     {
-        return parent::toString() . ' MHz';
+        return parent::toString().' MHz';
     }
 }
