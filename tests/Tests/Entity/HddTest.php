@@ -2,8 +2,8 @@
 
 namespace Tests;
 
-use PHPUnit\Framework\TestCase;
 use App\Entity\Hdd;
+use PHPUnit\Framework\TestCase;
 
 class HddTest extends TestCase
 {

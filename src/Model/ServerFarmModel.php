@@ -83,7 +83,7 @@ class ServerFarmModel
     }
 
     /**
-     * Output allocation
+     * Output allocation.
      */
     public function toString()
     {

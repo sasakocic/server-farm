@@ -4,8 +4,8 @@ namespace Tests;
 
 use App\Model\ServerFarmModel;
 use App\Model\ServerModel;
-use PHPUnit\Framework\TestCase;
 use App\Model\VmachineModel;
+use PHPUnit\Framework\TestCase;
 
 class ServerFarmTest extends TestCase
 {
@@ -31,7 +31,7 @@ class ServerFarmTest extends TestCase
     }
 
     /**
-     * Depending on order we can fit more VMs in less servers
+     * Depending on order we can fit more VMs in less servers.
      */
     public function testGetNumberDifferentOrder()
     {
